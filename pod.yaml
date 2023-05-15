@@ -1,0 +1,18 @@
+apiVersion: V1
+kind: replicationcontroller
+metadata:
+  name: firstpod
+spec:
+ replicas: 3
+ selector:
+    app: newapp
+ template:
+    metadata:
+       labels:
+         app: newapp
+ spec:
+  containers:
+    - name: first_conatiner
+      image: nginx
+      ports:
+        - containerport: 80
