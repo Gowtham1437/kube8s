@@ -1,4 +1,4 @@
-aapiVersion: V1
+apiVersion: V1
 kind: ReplicationController
 metadata:
   name: myjavaapp-rc
