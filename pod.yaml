@@ -1,18 +1,20 @@
-apiVersion: V1
-kind: replicationcontroller
+aapiVersion: v1
+kind: ReplicationController
 metadata:
-  name: firstpod
+  name: myjavaapp-rc
 spec:
- replicas: 3
- selector:
-    app: newapp
- template:
+  replicas: 5
+  selector:
+    app: myjavaapp
+    version: 2.6.2
+  template:
     metadata:
-       labels:
-         app: newapp
- spec:
-  containers:
-    - name: first_conatiner
-      image: nginx
-      ports:
-        - containerport: 80
+      labels:
+        app: myjavaapp
+        version: 2.6.2
+    spec:
+      containers:
+      - name: myjavaapp
+        image: nginx
+        ports:
+        - containerPort: 80
